@@ -1,39 +1,26 @@
 class DOM {
   constructor(el) {
-    const $el = document.createElement(el);
-    this.$el = $el;
+    this.$el = document.createElement(el);
   }
 
   static create(el) {
     return new DOM(el);
   }
-
   static createMany(...elms) {
     // **
   }
-
   setSize(x, y) {
     this.$el.style.width = x;
     this.$el.style.height = y;
-    return this.$el;
+    return this;
   }
-
-  text(value) {
-    this.$el.innerText = value;
-    return this.$el;
-  }
-
-  html(value) {
-    this.$el.innerHTML = value;
-    return this.$el;
-  }
-
+  attr(prop, value) {}
+  text(value) {}
   css(cssValue) {
-    /**
-     * { height: value, opacity: value}
-     */
-
-    return this.$el;
+    Object.keys(cssValue).forEach(key => {
+      this.$el.style[key] = cssValue[key];
+    });
+    return this;
   }
 }
 

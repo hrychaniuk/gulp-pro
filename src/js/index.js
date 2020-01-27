@@ -9,17 +9,19 @@ import { User } from '%ui%/es6-class';
 import { DOM } from '%ui%/dom-creator';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const dropDown = new DropdownConstructor('[data-component="dropdown-1"]');
-
-  const user1 = new User({
-    name: 'Ivan',
-    surname: 'Petrov',
-  });
-
-  console.log(user1);
-
   const h1 = DOM.create('h1');
-  h1.setSize('10px', '20px');
 
-  console.log(h1);
+  const elms = DOM.createMany('p', 'input');
+
+  elms.setSize('10px', '5px');
+
+  // elms.setSize('10px', '20px')
+  //   .text('Some text')
+  //   .attr('disabled', true)
+  //   .css({
+  //     opacity: 0.5,
+  //     fontSize: '20px',
+  //   });
+
+  console.log(elms);
 });

@@ -1,8 +1,8 @@
 class User {
   static _instance = null;
 
-  constructor({ name, surname } = {}) {
-    if (User._instance) return this;
+  constructor({ name, surname }) {
+    if (User._instance) return User._instance;
     this.name = name;
     this.surname = surname;
 
