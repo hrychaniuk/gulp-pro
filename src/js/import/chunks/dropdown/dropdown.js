@@ -1,9 +1,9 @@
-class Dropdown {
+class Dropdown { 
+
   constructor(dropSelector) {
     this.$el = document.querySelector(dropSelector);
 
     if (!this.$el) return console.error('NOT_FOUND_ELS');
-
     this.$btn = this.$el.firstElementChild;
     this.setListener();
   }

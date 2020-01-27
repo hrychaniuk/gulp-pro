@@ -11,7 +11,7 @@ gulp.task('serve', () => {
       //Route paths are not relative to the base directory
       routes: {
         '/404': 'dist/404.html',
-        '/about': 'dist/pages/about.html',
+        '/about': 'dist/about.html',
       },
     },
     port: 80,
