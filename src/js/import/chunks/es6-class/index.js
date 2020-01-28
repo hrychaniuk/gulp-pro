@@ -9,7 +9,7 @@ class User {
     User._instance = this;
   }
 
-  getFullname() {
+  get fullname() {
     return `${this.name} ${this.surname}`;
   }
 }

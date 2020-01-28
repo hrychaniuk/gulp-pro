@@ -4,24 +4,44 @@ import './import/components';
 /*
  * Chunks
  */
-import { DropdownConstructor } from './import/chunks/dropdown/dropdown.js';
+import observer from '%ui%/observer';
 import { User } from '%ui%/es6-class';
-import { DOM } from '%ui%/dom-creator';
+import { getIncrementor } from '%ui%/hosting';
+import { MacBook, Memory, Engraving, Insurance } from '%ui%/decorator';
+
+/**
+ * Patterns
+ * Конструктор (Constructor)
+ * Модульний (Module)
+ * Фабрика (Factory)
+ * Сінглтон (Singletion)
+
+ - Структурні шаблони (Structural): впорядковують об'єкти.
+ * Декоратор (Decorator)
+
+ - Поведінкові (Behavioral): як об'єкти співвідносяться один з одним.
+ * Спостерігач (Observer)
+ */
 
 document.addEventListener('DOMContentLoaded', () => {
-  const h1 = DOM.create('h1');
-
-  const elms = DOM.createMany('p', 'input');
-
-  elms.setSize('10px', '5px');
-
-  // elms.setSize('10px', '20px')
-  //   .text('Some text')
-  //   .attr('disabled', true)
-  //   .css({
-  //     opacity: 0.5,
-  //     fontSize: '20px',
-  //   });
-
-  console.log(elms);
+  // -- hosting
+  // const inc = getIncrementor();
+  // console.log(inc());
+  // console.log(inc());
+  // console.log(inc());
+  //
+  //
+  // -- decorator
+  // const mb = new MacBook();
+  // Memory(mb);
+  // Engraving(mb);
+  // Insurance(mb);
+  // console.log(mb.cost()); //1522
+  // console.log(mb.screenSize()); //13.3
+  //
+  //
+  // -- observer
+  // document.addEventListener('keyup', e => {
+  //   observer.notify(e.keyCode);
+  // });
 });

@@ -1,6 +1,13 @@
-import _ from "lodash";
+import _ from 'lodash';
+import observer from '%ui%/observer';
 
-// (async () => {
-//     await new Promise(res => setTimeout(res, 2000));
-//     console.dir(_);
-// })()
+const logger = x => {
+  console.log('log: ', x);
+};
+
+const error = x => {
+  console.error('error: ', x);
+};
+
+observer.subscribe(logger);
+observer.subscribe(error);
