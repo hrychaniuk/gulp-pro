@@ -4,10 +4,12 @@ import './import/components';
 /*
  * Chunks
  */
+import mediator from '%ui%/mediator';
 import observer from '%ui%/observer';
 import { User } from '%ui%/es6-class';
 import { getIncrementor } from '%ui%/hosting';
 import { MacBook, Memory, Engraving, Insurance } from '%ui%/decorator';
+import Easydropdown from 'easydropdown';
 
 /**
  * Patterns
@@ -21,14 +23,25 @@ import { MacBook, Memory, Engraving, Insurance } from '%ui%/decorator';
 
  - Поведінкові (Behavioral): як об'єкти співвідносяться один з одним.
  * Спостерігач (Observer)
+ * Посередник (Mediator)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('my-select').onchange = e => {
+    mediator.post('input-change', e);
+  };
+
+  //
+  //
   // -- hosting
-  // const inc = getIncrementor();
+  // const inc = getIncrementor(10);
   // console.log(inc());
   // console.log(inc());
   // console.log(inc());
+  // const inc2 = getIncrementor(20);
+  // console.log(inc2());
+  // console.log(inc2());
+  // console.log(inc2());
   //
   //
   // -- decorator
@@ -43,5 +56,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // -- observer
   // document.addEventListener('keyup', e => {
   //   observer.notify(e.keyCode);
+  // });
+  //
+  //
+  // -- select
+  // const dropDown = Easydropdown('#my-select', {
+  //   callbacks: {
+  //     onSelect: value => {
+  //       mediator.post('dropdown-input', value);
+  //     },
+  //   },
   // });
 });

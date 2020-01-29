@@ -7,6 +7,7 @@ function MacBook() {
     return 13.3;
   };
 }
+
 /*Decorator 1*/
 function Memory(macbook) {
   var v = macbook.cost();
