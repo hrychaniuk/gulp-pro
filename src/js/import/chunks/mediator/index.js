@@ -31,6 +31,4 @@ function EventBus() {
   }
 }
 
-const singleton = new EventBus();
-
-export default singleton;
+export default new EventBus();
