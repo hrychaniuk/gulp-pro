@@ -43,6 +43,7 @@ module.exports = {
 
   resolve: {
     alias: {
+      '@config': path.resolve(__dirname, 'src/js/config.js'),
       '%ui%': path.resolve(__dirname, 'src/js/import/chunks'),
       '%modules%': path.resolve(__dirname, 'src/blocks/modules'),
       '%components%': path.resolve(__dirname, 'src/blocks/components'),

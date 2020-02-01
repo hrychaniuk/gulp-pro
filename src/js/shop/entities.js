@@ -12,6 +12,8 @@ export class Values {
 
 export class Products {
   constructor(value, name, price, GLOBAL_VALUES) {
+    if (!GLOBAL_VALUES) throw new Error('NOT_GLOBAL_VALUE');
+    
     this.name = name;
     this.price = price;
     this.value = value;

@@ -1,7 +1,7 @@
-import { money, products } from './data';
+import { moneys, products } from './data';
 
 function renderShopList() {
-  const list = [money, ...products];
+  const list = [...moneys, ...products];  
   const shopList = document.getElementById('shop-list');
   shopList.innerHTML = '';
   list.forEach(item => {
@@ -35,7 +35,7 @@ function renderGlobalBasket() {
     if (item.valueInGlobalShop) {
       monitor.value += item.name + item.valueInGlobalShop + item.mod + '\n';
       sum += item.valueInGlobalShop * item.price;
-      item.controller.setShowValue(sum);
+      item.controller.setShowValue(item.valueInGlobalShop * item.price);
     }
   });
   monitor.value += 'Всього ' + sum + ' грн' + '\n';

@@ -1,8 +1,10 @@
 import '@babel/polyfill';
+import './advanced-6';
+import { getMovies } from './http';
 /*
  * Chunks
  */
-import { money, products } from './shop/data';
+import { moneys, products } from './shop/data';
 import {
   renderShopList,
   renderMiddleBasket,
@@ -10,6 +12,9 @@ import {
 } from './shop/renders';
 
 document.addEventListener('DOMContentLoaded', () => {
+  /**
+   * SHop
+   */
   const addBtn = document.getElementById('add');
   const buyBtn = document.getElementById('buy');
 
