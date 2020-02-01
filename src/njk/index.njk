@@ -1,0 +1,17 @@
+{% set title = "Logos page" %}
+{% extends "layouts/master.njk" %}
+
+{% block content %}
+	<ul id="shop-list" class="shop-list"></ul>
+	<div>
+		Кількість
+		<input type="number" id="txt">
+		<ul id="shop-inputs" class="shop-inputs"></ul>
+		<button id="add">Add</button>
+		<textarea name="" id="area" rows="10"></textarea>
+		<button id="buy">Buy</button>
+	</div>
+	<div>
+		<textarea name="" id="monitor" disabled rows="12"></textarea>
+	</div>
+{% endblock %}

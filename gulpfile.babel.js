@@ -1,13 +1,22 @@
 'use strict';
 
 import gulp from 'gulp';
+import yargs from 'yargs';
+
+const argv = yargs.argv,
+  isPug = !!argv.pug;
 
 const requireDir = require('require-dir'),
   paths = {
-    views: {
-      src: ['./src/views/*.pug', './src/views/pages/*.pug'],
+    njk: {
+      src: ['./src/njk/*.njk', './src/njk/pages/*.njk'],
       dist: './dist/',
-      watch: ['./src/blocks/**/*.pug', './src/views/**/*.pug'],
+      watch: ['./src/blocks/**/*.njk', './src/njk/**/*.njk'],
+    },
+    pug: {
+      src: ['./src/pug/*.pug', './src/pug/pages/*.pug'],
+      dist: './dist/',
+      watch: ['./src/blocks/**/*.pug', './src/pug/**/*.pug'],
     },
     styles: {
       src: './src/styles/main.{scss,sass}',
@@ -37,13 +46,26 @@ export { paths };
 
 export const development = gulp.series(
   'clean',
-  gulp.parallel(['views', 'styles', 'scripts', 'images', 'fonts']),
+  gulp.parallel([
+    isPug ? 'pug' : 'njk',
+    'styles',
+    'scripts',
+    'images',
+    'fonts',
+  ]),
   gulp.parallel('serve'),
 );
 
 export const prod = gulp.series(
   'clean',
-  gulp.series(['views', 'styles', 'scripts', 'images', 'fonts']),
+  gulp.series([
+    isPug ? 'pug' : 'njk',
+    'njk',
+    'styles',
+    'scripts',
+    'images',
+    'fonts',
+  ]),
 );
 
 export default development;
