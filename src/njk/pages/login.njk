@@ -1,0 +1,21 @@
+{% set title = "About page" %}
+{% extends "layouts/master.njk" %}
+
+{% block content %}
+    <h1>Login</h1>
+    <hr>
+    <div>
+        <h2>Registration</h2>
+        <input id="rName" type="text" placeholder="Name">
+        <input id="rPass" type="password" placeholder="Name">
+        <button id="rBtn">Send</button>
+    </div>
+    <hr>
+    <h2>Login</h2>
+    <div>
+        <input id="lName" type="text" placeholder="Name">
+        <input id="lPass" type="password" placeholder="Name">
+        <button id="lBtn">Send</button>
+    </div>
+    <hr>
+{% endblock %}

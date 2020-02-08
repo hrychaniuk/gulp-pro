@@ -16,6 +16,12 @@ gulp.task('njk', () => {
     .pipe(
       njkRender({
         path: ['src/njk/'],
+        envOptions: {
+          tags: {
+            variableStart: '{@',
+            variableEnd: '@}',
+          },
+        },
       }),
     )
     .pipe(prettify({ indent_size: 4 }))
